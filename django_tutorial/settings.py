@@ -26,6 +26,7 @@ SECRET_KEY = 'django-insecure-sh535))ljcep)42pdypj!)7=&g^rfp8o)#f+icn%vg2hmttp-(
 DEBUG = True
 
 ALLOWED_HOSTS = ['*']
+CSRF_TRUSTED_ORIGINS = [f'https://money-tracker.up.railway.app']
 
 # Application definition
 
