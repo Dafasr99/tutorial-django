@@ -5,6 +5,7 @@
 <b>{{name}}</b>
 
 <table>
+
     <tr>
         <th>Nama</th>
         <th>Jenis</th>
@@ -24,5 +25,12 @@
     {% endfor %}
 
 </table>
+
+<br>
+<a href="{% url 'money_tracker:create_transaction' %}">
+    <button>
+        Transaksi Baru
+    </button>
+</a>
 
 {% endblock content %}
