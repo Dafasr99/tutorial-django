@@ -1,21 +1,14 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from money_tracker.models import TransactionRecord
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect, JsonResponse
 from django.core import serializers
-from django.http import HttpResponseRedirect
 from money_tracker.forms import TransactionRecordForm
 from django.urls import reverse
-from django.http import JsonResponse
-from money_tracker.models import TransactionRecord
-from django.shortcuts import redirect
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib import messages
-from django.contrib.auth import authenticate, login
-from django.contrib.auth import logout
+from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 import datetime
-from django.http import HttpResponseRedirect
-from django.urls import reverse
 
 # Create your views here.
 
