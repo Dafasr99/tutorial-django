@@ -1,7 +1,8 @@
-Nama : Anandafa Syukur Rizky
+# Tugas Tutorial Lab Pemrograman Berbasis Web
 
-NPM : 2106655040
+### Nama: Anandafa Syukur Rizky
+### NPM : 2106655040
+ ----
+compfest.link/MoneyTracker_AnandafaSyukurRizky_2106655040
 
-Kelas : Z
 
-Hobi : Tidur
