@@ -91,10 +91,10 @@
             <td>
 
             <a style = "margin-right: 10px" href="{% url 'money_tracker:modify_transaction' transaction.pk %}">
-                <button class="btn btn-primary" type="submit">Ubah</button>
+                <button class="btn btn-primary" type="submit">Change</button>
 
             <a href="{% url 'money_tracker:delete_transaction' transaction.pk %}">
-                <button class="btn btn-primary" type="submit">Hapus</button>
+                <button class="btn btn-primary" type="submit">Delete</button>
         </td>
 
         </tr>
@@ -109,7 +109,7 @@
 <br>
 
 <a href="{% url 'money_tracker:create_transaction' %}">
-    <button class="btn btn-primary center" type="submit">Transaksi Baru</button>
+    <button class="btn btn-primary center" type="submit">Add New Transaction</button>
     
 </a>
 

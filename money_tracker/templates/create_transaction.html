@@ -4,19 +4,42 @@
 
 {% block content %}
 
-<h1>Tambah Transaksi Baru</h1>
-
-<form method="POST">
-    {% csrf_token %}
-    <table>
-        {{ form.as_table }}
-        <tr>
-            <td></td>
-            <td>
-                <input type="submit" value="Tambah"/>
-            </td>
-        </tr>
-    </table>
-</form>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 mx-auto mt-5">
+      <div class="card">
+        <div class="card-header">
+          <h3 class="text-center">Add New Transaction</h3>
+        </div>
+        <div class="card-body">
+          <form method="POST">
+            {% csrf_token %}
+            <div class="form-group">
+              <label for="{{ form.name.id_for_label }}">Nama:</label>
+              {{ form.name }}
+            </div>
+            <div class="form-group">
+              <label for="{{ form.type.id_for_label }}">Jenis:</label>
+              {{ form.type }}
+            </div>
+            <div class="form-group">
+              <label for="{{ form.amount.id_for_label }}">Jumlah:</label>
+              {{ form.amount }}
+            </div>
+            <div class="form-group">
+              <label for="{{ form.description.id_for_label }}">Deskripsi:</label>
+              {{ form.description }}
+            </div>
+            <div class="form-group">
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary">Add Transaction</button>
+                </div>                
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 {% endblock %}
