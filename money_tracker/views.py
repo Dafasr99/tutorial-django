@@ -8,7 +8,9 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
+from django.views.decorators.csrf import csrf_exempt
 import datetime
+
 
 # Create your views here.
 
@@ -91,6 +93,29 @@ def delete_transaction(request, id):
     transaction.delete()
     # Kembali ke halaman awal
     return HttpResponseRedirect(reverse('money_tracker:show_tracker'))
+
+@csrf_exempt
+def create_transaction_ajax(request):  
+# create object of form
+    form = TransactionRecordForm(request.POST or None)
+
+    if form.is_valid() and request.method == "POST":
+        form.save()
+        data = TransactionRecord.objects.last()
+
+    # parsing the form data into json
+    result = {
+        'id':data.id,
+        'name':data.name,
+        'type':data.type,
+        'amount':data.amount,
+        'date':data.date,
+        'description':data.description,
+    }
+    return JsonResponse(result)
+
+    context = {'form': form}
+    return render(request, "create_transaction.html", context)
 
 
 def show_xml(request):
