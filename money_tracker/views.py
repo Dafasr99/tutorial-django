@@ -118,6 +118,7 @@ def create_transaction_ajax(request):
     return render(request, "create_transaction.html", context)
 
 
+
 def show_xml(request):
     data = TransactionRecord.objects.all()
     return HttpResponse(serializers.serialize("xml", data), content_type="application/xml")
